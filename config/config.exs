@@ -7,8 +7,10 @@
 # General application configuration
 import Config
 
+config :accounts, otp_app: :server
+
 config :server,
-  ecto_repos: [Server.Repo]
+  ecto_repos: [Server.Repo, Accounts.Repo]
 
 # Configures the endpoint
 config :server, ServerWeb.Endpoint,

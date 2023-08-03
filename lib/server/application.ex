@@ -12,6 +12,7 @@ defmodule Server.Application do
       ServerWeb.Telemetry,
       # Start the Ecto repository
       Server.Repo,
+      Accounts.Repo,
       # Start the PubSub system
       {Phoenix.PubSub, name: Server.PubSub},
       # Start Finch

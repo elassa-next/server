@@ -49,7 +49,9 @@ defmodule Server.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:plug_cowboy, "~> 2.5"},
+      {:accounts, path: "../accounts"}
+      # {:accounts, git: "https://github.com/elassa-next/accounts", commit: "4fe24cc62373abd899c66512d572702039c10ffe"}
     ]
   end
 
