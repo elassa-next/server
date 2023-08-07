@@ -61,6 +61,18 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
+config :server, Accounts.Guardian.SubjectClaims,
+  issuer: "server",
+  allowed_algos: ["RS512"],
+  secret_fetcher: Accounts.Guardian.SecretFetcher
+
+config :bodyguard,
+       Bodyguard.Plug.Authorize,
+       action: {Phoenix.Controller, :action_name},
+       user: &Accounts.Guardian.SubjectClaims.Plug.current_resource/1,
+       params: &Server.Policy.extract_params/1,
+       fallback: ServerWeb.FallbackController
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{config_env()}.exs"

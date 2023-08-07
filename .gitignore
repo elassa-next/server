@@ -35,3 +35,5 @@ server-*.tar
 npm-debug.log
 /assets/node_modules/
 
+priv/private.pem
+priv/public.pem
