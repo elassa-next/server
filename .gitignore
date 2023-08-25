@@ -37,3 +37,4 @@ npm-debug.log
 
 priv/private.pem
 priv/public.pem
+priv/static/uploads
